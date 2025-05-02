@@ -1,12 +1,183 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>Songtfolio</title>
+  <meta charset="UTF-8">
+  <title>Songtfolio | 개발자 포트폴리오</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Welcome to Songtfolio!</h1>
-    <p>나의 포트폴리오 웹사이트입니다.</p>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- 네비게이션 -->
+  <header class="bg-blue-900 shadow fixed top-0 left-0 w-full z-10">
+    <div class="container mx-auto flex justify-between items-center px-6 py-4">
+  
+      <!-- 로고 -->
+      <h1 class="text-2xl font-bold text-white">Songtfolio</h1>
+  
+      <!-- 데스크탑 메뉴 -->
+      <nav class="hidden md:flex gap-2">
+        <a href="#home" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">홈</a>
+        <a href="#about" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">소개</a>
+        <a href="#career" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">경력</a>
+        <a href="#activities" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">활동</a>
+        <a href="#projects" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">프로젝트</a>
+        <a href="#contact" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">연락처</a>
+      </nav>
+  
+      <!-- 모바일 메뉴 버튼 -->
+      <button class="md:hidden text-white text-2xl" onclick="toggleMenu()">☰</button>
+    </div>
+  
+    <!-- 모바일 사이드 메뉴 -->
+    <div id="mobileMenu" class="md:hidden fixed top-0 right-0 h-full w-64 bg-blue-800 text-white transform translate-x-full transition-transform duration-300 shadow-lg z-20">
+      <div class="p-6 space-y-4">
+        <button class="text-white text-2xl float-right" onclick="toggleMenu()">×</button>
+        <a href="#home" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">홈</a>
+        <a href="#about" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">소개</a>
+        <a href="#career" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">경력</a>
+        <a href="#activities" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">활동</a>
+        <a href="#projects" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">프로젝트</a>
+        <a href="#contact" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">연락처</a>
+      </div>
+    </div>
+  </header>
+  
+  
+
+  <main class="pt-24 px-4 max-w-4xl mx-auto space-y-16">
+
+    <!-- 홈 -->
+    <section id="home" class="text-center">
+        <h2 class="text-xl sm:text-3xl md:text-4xl font-bold mb-2">안녕하세요, 송경근입니다 👋</h2>
+        <p class="text-base sm:text-lg md:text-xl">신입 백엔드/데이터 엔지니어를 준비하고 있는 개발자입니다.</p>
+    </section>
+
+    <!-- 소개 -->
+    <section id="about">
+        <h2 class="text-2xl font-semibold mb-4 border-b pb-2">자기소개</h2>
+        <div class="flex flex-col md:flex-row items-start gap-6 md:gap-20">
+          
+          <!-- 프로필 사진 -->
+          <div class="flex-shrink-0 w-56 h-56 rounded-full overflow-hidden shadow mx-auto md:mx-0">
+            <img src="image/Profile_iu.jpg" alt="프로필 사진" class="object-cover w-full h-full">
+          </div>
+      
+          <!-- 소개 텍스트 -->
+          <div class="space-y-2 text-left">
+            <li>유지보수가 쉬운 SW를 개발하고 싶어요.</li>
+            <li>개발 과정에서 항상 사용자의 입장을 생각해요.</li>
+            <li>꾸준하게 공부하고 기록하며 항상 성장하려고 노력해요.</li>
+            <li>I'm currently learning JavaSpring</li>
+          </div>
+      
+        </div>
+    </section>
+      
+
+
+    <!-- 경력 -->
+    <section id="career">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">경력</h2>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="text-xl font-bold">James Company (2021.02 ~ )</h3>
+        <ul class="list-disc list-inside">
+          <li>게시판 기능 개발</li>
+          <li>TypeScript, React 기반 프론트엔드</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 활동 -->
+    <section id="activities">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">대외활동</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-lg font-bold">ABC 개발 동아리</h3>
+          <ul class="list-disc list-inside">
+            <li>교내 개발 동아리</li>
+            <li>프론트엔드 담당</li>
+          </ul>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="text-lg font-bold">XXX 부트캠프</h3>
+          <ul class="list-disc list-inside">
+            <li>기업 주최 부트캠프 수강</li>
+            <li>프론트엔드 프로젝트 수행</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 프로젝트 -->
+    <section id="projects">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">프로젝트</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div onclick="openModal('project1')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold">Project 1</h3>
+          <p class="text-gray-600">간단한 설명</p>
+        </div>
+        <div onclick="openModal('project2')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold">Project 2</h3>
+          <p class="text-gray-600">간단한 설명</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 연락처 -->
+    <section id="contact">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">연락처</h2>
+      <p>Email: <a href="mailto:woorim@example.com" class="text-blue-600 underline">woorim@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/SKK-woorim" target="_blank" class="text-blue-600 underline">github.com/SKK-woorim</a></p>
+    </section>
+  </main>
+
+  <!-- 모달 -->
+  <div id="project1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
+      <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('project1')">&times;</span>
+      <h2 class="text-2xl font-bold mb-2">Project 1</h2>
+      <p>이곳에 프로젝트 1의 상세 정보를 적습니다.</p>
+    </div>
+  </div>
+
+  <div id="project2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
+      <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('project2')">&times;</span>
+      <h2 class="text-2xl font-bold mb-2">Project 2</h2>
+      <p>이곳에 프로젝트 2의 상세 정보를 적습니다.</p>
+    </div>
+  </div>
+
+  <footer class="bg-white mt-16 py-6 text-center text-sm border-t">
+    © 2025 Songtfolio. All rights reserved.
+  </footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('flex');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+      document.getElementById(id).classList.remove('flex');
+    }
+
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('translate-x-full');
+        menu.classList.toggle('translate-x-0');
+    }
+
+    window.onclick = function(event) {
+      const modals = document.getElementsByClassName('modal');
+      for (let modal of modals) {
+        if (event.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }
+      }
+    }
+  </script>
 </body>
 </html>

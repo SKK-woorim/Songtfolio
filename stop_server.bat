@@ -1,0 +1,3 @@
+@echo off
+echo Stopping Songtfolio Docker container...
+docker stop songtfolio-container
