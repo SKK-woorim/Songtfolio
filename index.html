@@ -27,6 +27,12 @@
       <!-- 모바일 메뉴 버튼 -->
       <button class="md:hidden text-white text-2xl" onclick="toggleMenu()">☰</button>
     </div>
+
+    <!-- 모바일 오버레이 배경 -->
+    <div id="mobileOverlay" 
+     class="md:hidden fixed inset-0 bg-black bg-opacity-50 hidden z-10"
+     onclick="toggleMenu()">
+    </div>
   
     <!-- 모바일 사이드 메뉴 -->
     <div id="mobileMenu" class="md:hidden fixed top-0 right-0 h-full w-64 bg-blue-800 text-white transform translate-x-full transition-transform duration-300 shadow-lg z-20">
@@ -54,7 +60,7 @@
 
     <!-- 소개 -->
     <section id="about">
-        <h2 class="text-2xl font-semibold mb-4 border-b pb-2">자기소개</h2>
+        <h2 class="text-2xl font-semibold mb-4 border-b pb-2">🙋‍♂️ 자기소개</h2>
         <div class="flex flex-col md:flex-row items-start gap-6 md:gap-20">
           
           <!-- 프로필 사진 -->
@@ -72,34 +78,33 @@
       
         </div>
     </section>
-      
 
-
-    <!-- 경력 -->
+    <!-- 학력 -->
     <section id="career">
-      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">경력</h2>
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">🎓 학력</h2>
       <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-xl font-bold">James Company (2021.02 ~ )</h3>
+        <h3 class="text-xl font-bold">한라대학교 </h3>
+        <h1 class="font-medium mb-1">(2019.02~2025.08)</h1>
         <ul class="list-disc list-inside">
-          <li>게시판 기능 개발</li>
-          <li>TypeScript, React 기반 프론트엔드</li>
+          <li>IT소프트웨어학과</li>
+          <li>학점: 3.10</li>
         </ul>
       </div>
     </section>
 
-    <!-- 활동 -->
+    <!-- 대외활동 -->
     <section id="activities">
-      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">대외활동</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="bg-white p-4 rounded shadow">
-          <h3 class="text-lg font-bold">ABC 개발 동아리</h3>
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">🎯 대외활동</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div onclick="openModal('activities1')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+          <h3 class="text-xl font-bold mb-1">HAI 소프트웨어 동아리</h3>
           <ul class="list-disc list-inside">
-            <li>교내 개발 동아리</li>
-            <li>프론트엔드 담당</li>
+            <li>교내 소프트웨어 프로젝트 동아리</li>
+            <li>동아리 창설 및 운영 (동아리장)</li>
           </ul>
         </div>
-        <div class="bg-white p-4 rounded shadow">
-          <h3 class="text-lg font-bold">XXX 부트캠프</h3>
+        <div onclick="openModal('activities2')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+          <h3 class="text-xl font-bold mb-1">Project 2</h3>
           <ul class="list-disc list-inside">
             <li>기업 주최 부트캠프 수강</li>
             <li>프론트엔드 프로젝트 수행</li>
@@ -110,14 +115,14 @@
 
     <!-- 프로젝트 -->
     <section id="projects">
-      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">프로젝트</h2>
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">💻 프로젝트</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div onclick="openModal('project1')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold">Project 1</h3>
+          <h3 class="text-xl font-bold mb-1">Project 1</h3>
           <p class="text-gray-600">간단한 설명</p>
         </div>
         <div onclick="openModal('project2')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-          <h3 class="text-xl font-semibold">Project 2</h3>
+          <h3 class="text-xl font-bold mb-1">Project 2</h3>
           <p class="text-gray-600">간단한 설명</p>
         </div>
       </div>
@@ -125,13 +130,59 @@
 
     <!-- 연락처 -->
     <section id="contact">
-      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">연락처</h2>
-      <p>Email: <a href="mailto:woorim@example.com" class="text-blue-600 underline">woorim@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/SKK-woorim" target="_blank" class="text-blue-600 underline">github.com/SKK-woorim</a></p>
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">📞 연락처</h2>
+      <div class="flex space-x-6 text-gray-600 text-3xl">
+        
+        <!-- GitHub -->
+        <a href="https://github.com/SKK-woorim" target="_blank" class="flex flex-col items-center hover:opacity-80 transition">
+          <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567128822/noticon/osiivsvhnu4nt8doquo0.png" alt="GitHub" class="w-10 h-10 mb-1">
+          <span class="text-sm text-gray-700">GitHub</span>
+        </a>
+
+        <!-- Tistory -->
+        <a href="https://skkcode.tistory.com/" target="_blank" class="flex flex-col items-center hover:opacity-80 transition">
+          <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1733363183/noticon/xldxhuzluop75rkmshmh.png" alt="Tistory" class="w-10 h-10 mb-1">
+          <span class="text-sm text-gray-700">티스토리</span>
+          </svg>
+        </a>        
+        
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/song.2k" target="_blank" class="flex flex-col items-center hover:opacity-80 transition">
+          <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567008788/noticon/bqjhb6xvljt9viccy6lh.png" alt="Instagram" class="w-10 h-10 mb-1">
+          <span class="text-sm text-gray-700">인스타그램</span>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:woorim31@naver.com" aria-label="Email" class="flex flex-col items-center hover:opacity-80 transition">
+          <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567063035/noticon/hzdraiek2cwe52xhnvsg.svg" alt="Email" class="w-10 h-10 mb-1">
+          <span class="text-sm text-gray-700">이메일</span>
+        </a>
+    
+
+    
+      </div>
     </section>
+    
   </main>
 
-  <!-- 모달 -->
+  <!-- 대외활동 모달 -->
+  <div id="activities1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
+      <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('activities1')">&times;</span>
+      <h2 class="text-2xl font-bold mb-2">Project 1</h2>
+      <p>이곳에 대외활동동 1의 상세 정보를 적습니다.</p>
+    </div>
+  </div>
+
+  <div id="activities2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
+      <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('activities2')">&times;</span>
+      <h2 class="text-2xl font-bold mb-2">Project 2</h2>
+      <p>이곳에 대외활동 2의 상세 정보를 적습니다.</p>
+    </div>
+  </div>
+  
+  <!-- 프로젝트 모달 -->
   <div id="project1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
     <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
       <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('project1')">&times;</span>
@@ -164,9 +215,13 @@
     }
 
     function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('translate-x-full');
-        menu.classList.toggle('translate-x-0');
+      const menu = document.getElementById('mobileMenu');
+      const overlay = document.getElementById('mobileOverlay');
+      const isOpen = !menu.classList.contains('translate-x-full');
+      // 토글 열고 닫기
+      menu.classList.toggle('translate-x-full');
+      menu.classList.toggle('translate-x-0');
+      overlay.classList.toggle('hidden');
     }
 
     window.onclick = function(event) {
