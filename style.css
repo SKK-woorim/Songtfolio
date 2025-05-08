@@ -1,0 +1,22 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+    scroll-behavior: smooth;
+  }
+  #mobileOverlay {
+    transition: opacity 0.3s ease;
+  }
+
+  .modal {
+    display: none; /* 기본적으로 안 보이게 */
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.flex {
+    display: flex; /* openModal() 함수로 열릴 때 */
+  }  

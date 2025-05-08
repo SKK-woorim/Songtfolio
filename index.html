@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Songtfolio | 개발자 포트폴리오</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 text-gray-800">
 
@@ -18,7 +19,7 @@
       <nav class="hidden md:flex gap-2">
         <a href="#home" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">홈</a>
         <a href="#about" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">소개</a>
-        <a href="#career" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">경력</a>
+        <a href="#career" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">학력</a>
         <a href="#activities" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">활동</a>
         <a href="#projects" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">프로젝트</a>
         <a href="#contact" class="text-white px-3 py-2 rounded hover:bg-blue-700 transition">연락처</a>
@@ -40,8 +41,8 @@
         <button class="text-white text-2xl float-right" onclick="toggleMenu()">×</button>
         <a href="#home" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">홈</a>
         <a href="#about" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">소개</a>
-        <a href="#career" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">경력</a>
-        <a href="#activities" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">활동</a>
+        <a href="#career" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">학력</a>
+        <a href="#activities" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">대외활동</a>
         <a href="#projects" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">프로젝트</a>
         <a href="#contact" onclick="toggleMenu()" class="block px-4 py-2 rounded hover:bg-blue-700">연락처</a>
       </div>
@@ -61,10 +62,10 @@
     <!-- 소개 -->
     <section id="about">
         <h2 class="text-2xl font-semibold mb-4 border-b pb-2">🙋‍♂️ 자기소개</h2>
-        <div class="flex flex-col md:flex-row items-start gap-6 md:gap-20">
+        <div class="flex flex-col md:flex-row items-center gap-6 md:gap-20">
           
           <!-- 프로필 사진 -->
-          <div class="flex-shrink-0 w-56 h-56 rounded-full overflow-hidden shadow mx-auto md:mx-0">
+          <div class="flex-shrink-0 w-48 h-48 rounded-full overflow-hidden shadow mx-auto md:mx-0">
             <img src="image/Profile_iu.jpg" alt="프로필 사진" class="object-cover w-full h-full">
           </div>
       
@@ -74,6 +75,8 @@
             <li>개발 과정에서 항상 사용자의 입장을 생각해요.</li>
             <li>꾸준하게 공부하고 기록하며 항상 성장하려고 노력해요.</li>
             <li>I'm currently learning JavaSpring</li>
+            <li>I'm currently learning Python</li>
+            <li>I'm currently learning AI</li>
           </div>
       
         </div>
@@ -202,37 +205,7 @@
   <footer class="bg-white mt-16 py-6 text-center text-sm border-t">
     © 2025 Songtfolio. All rights reserved.
   </footer>
-
-  <script>
-    function openModal(id) {
-      document.getElementById(id).classList.remove('hidden');
-      document.getElementById(id).classList.add('flex');
-    }
-
-    function closeModal(id) {
-      document.getElementById(id).classList.add('hidden');
-      document.getElementById(id).classList.remove('flex');
-    }
-
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      const overlay = document.getElementById('mobileOverlay');
-      const isOpen = !menu.classList.contains('translate-x-full');
-      // 토글 열고 닫기
-      menu.classList.toggle('translate-x-full');
-      menu.classList.toggle('translate-x-0');
-      overlay.classList.toggle('hidden');
-    }
-
-    window.onclick = function(event) {
-      const modals = document.getElementsByClassName('modal');
-      for (let modal of modals) {
-        if (event.target === modal) {
-          modal.classList.add('hidden');
-          modal.classList.remove('flex');
-        }
-      }
-    }
-  </script>
+  
+  <script src="script.js"></script>
 </body>
 </html>
