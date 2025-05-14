@@ -54,13 +54,13 @@
   <main class="pt-24 px-4 max-w-4xl mx-auto space-y-16">
 
     <!-- 홈 -->
-    <section id="home" class="text-center">
+    <section id="home" class="text-center scroll-mt-24">
         <h2 class="text-xl sm:text-3xl md:text-4xl font-bold mb-2">안녕하세요, 송경근입니다 👋</h2>
         <p class="text-base sm:text-lg md:text-xl">신입 백엔드/데이터 엔지니어를 준비하고 있는 개발자입니다.</p>
     </section>
 
     <!-- 소개 -->
-    <section id="about">
+    <section id="about" class="scroll-mt-24">
         <h2 class="text-2xl font-semibold mb-4 border-b pb-2">🙋‍♂️ 자기소개</h2>
         <div class="flex flex-col md:flex-row items-center gap-6 md:gap-20">
           
@@ -83,20 +83,24 @@
     </section>
 
     <!-- 학력 -->
-    <section id="career">
+    <section id="career" class="scroll-mt-24">
       <h2 class="text-2xl font-semibold mb-4 border-b pb-2">🎓 학력</h2>
       <div class="bg-white p-4 rounded shadow">
-        <h3 class="text-xl font-bold">한라대학교 </h3>
-        <h1 class="font-medium mb-1">(2019.02~2025.08)</h1>
+        <h3 class="text-xl font-bold flex items-center gap-2">
+          <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1725251134/noticon/mclonktd7y1oetr6ctek.png" 
+               alt="학교 아이콘" class="w-6 h-6" />
+          한라대학교
+        </h3>        
+        <h4 class="font-medium mb-1">(2019.02~2025.08)</h4>
         <ul class="list-disc list-inside">
           <li>IT소프트웨어학과</li>
           <li>학점: 3.10</li>
-        </ul>
+        </ul>    
       </div>
-    </section>
+    </section>    
 
     <!-- 대외활동 -->
-    <section id="activities">
+    <section id="activities" class="scroll-mt-24">
       <h2 class="text-2xl font-semibold mb-4 border-b pb-2">🎯 대외활동</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div onclick="openModal('activities1')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
@@ -116,23 +120,104 @@
       </div>
     </section>
 
-    <!-- 프로젝트 -->
-    <section id="projects">
+    <section id="projects" class="scroll-mt-24">
       <h2 class="text-2xl font-semibold mb-4 border-b pb-2">💻 프로젝트</h2>
-      <div class="grid md:grid-cols-2 gap-6">
-        <div onclick="openModal('project1')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-1">Project 1</h3>
-          <p class="text-gray-600">간단한 설명</p>
+    
+      <div class="project-scroll flex gap-4 overflow-x-auto pb-4">
+        
+        <!-- 카드 1 -->
+        <div onclick="openModal('project1')"
+             class="min-w-[200px] h-[300px] bg-white rounded-lg shadow hover:shadow-xl cursor-pointer transition duration-300 flex flex-col overflow-hidden group relative">
+          
+          <!-- 썸네일 이미지 -->
+          <div class="relative w-full h-[70%]">
+            <img src="image/project1_thumb.jpg" alt="Project 1" class="w-full h-full object-cover">
+    
+            <!-- 호버 시 나오는 설명 오버레이 -->
+            <div class="absolute inset-0 bg-black bg-opacity-60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-sm text-center px-2">
+              이 프로젝트는 웹 기반 G-code 생성기를 구현한 작품입니다.
+            </div>
+          </div>
+    
+          <!-- 제목 -->
+          <div class="h-[30%] flex items-center justify-center border-t">
+            <h3 class="text-center text-base font-semibold">Project 1</h3>
+          </div>
         </div>
-        <div onclick="openModal('project2')" class="cursor-pointer bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
-          <h3 class="text-xl font-bold mb-1">Project 2</h3>
-          <p class="text-gray-600">간단한 설명</p>
+    
+        <!-- 카드 2 (예시) -->
+        <div onclick="openModal('project2')"
+             class="min-w-[200px] h-[300px] bg-white rounded-lg shadow hover:shadow-xl cursor-pointer transition duration-300 flex flex-col overflow-hidden group relative">
+          
+          <div class="relative w-full h-[70%]">
+            <img src="image/project2_thumb.jpg" alt="Project 2" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-sm text-center px-2">
+              프론트엔드 팀 프로젝트로, 반응형 UI 구현 중심.
+            </div>
+          </div>
+    
+          <div class="h-[30%] flex items-center justify-center border-t">
+            <h3 class="text-center text-base font-semibold">Project 2</h3>
+          </div>
         </div>
+
+        <!-- 카드 3 -->
+        <div onclick="openModal('project3')"
+             class="min-w-[200px] h-[300px] bg-white rounded-lg shadow hover:shadow-xl cursor-pointer transition duration-300 flex flex-col overflow-hidden group relative">
+          
+          <div class="relative w-full h-[70%]">
+            <img src="image/project3_thumb.jpg" alt="Project 4" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-sm text-center px-2">
+              프론트엔드 팀 프로젝트로, 반응형 UI 구현 중심.
+            </div>
+          </div>
+    
+          <div class="h-[30%] flex items-center justify-center border-t">
+            <h3 class="text-center text-base font-semibold">Project 3</h3>
+          </div>
+        </div>
+
+        <!-- 카드 4 -->
+        <div onclick="openModal('project4')"
+             class="min-w-[200px] h-[300px] bg-white rounded-lg shadow hover:shadow-xl cursor-pointer transition duration-300 flex flex-col overflow-hidden group relative">
+          
+          <div class="relative w-full h-[70%]">
+            <img src="image/project4_thumb.jpg" alt="Project 4" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-sm text-center px-2">
+              프론트엔드 팀 프로젝트로, 반응형 UI 구현 중심.
+            </div>
+          </div>
+    
+          <div class="h-[30%] flex items-center justify-center border-t">
+            <h3 class="text-center text-base font-semibold">Project 4</h3>
+          </div>
+        </div>
+
+        <!-- 카드 5 -->
+        <div onclick="openModal('project5')"
+             class="min-w-[200px] h-[300px] bg-white rounded-lg shadow hover:shadow-xl cursor-pointer transition duration-300 flex flex-col overflow-hidden group relative">
+          
+          <div class="relative w-full h-[70%]">
+            <img src="image/project5_thumb.jpg" alt="Project 5" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black bg-opacity-60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-sm text-center px-2">
+              프론트엔드 팀 프로젝트로, 반응형 UI 구현 중심.
+            </div>
+          </div>
+    
+          <div class="h-[30%] flex items-center justify-center border-t">
+            <h3 class="text-center text-base font-semibold">Project 5</h3>
+          </div>
+        </div>
+    
+        <!-- 필요한 만큼 카드 복제 -->
+    
       </div>
     </section>
+    
+    
 
     <!-- 연락처 -->
-    <section id="contact">
+    <section id="contact" class="scroll-mt-24">
       <h2 class="text-2xl font-semibold mb-4 border-b pb-2">📞 연락처</h2>
       <div class="flex space-x-6 text-gray-600 text-3xl">
         
@@ -145,20 +230,20 @@
         <!-- Tistory -->
         <a href="https://skkcode.tistory.com/" target="_blank" class="flex flex-col items-center hover:opacity-80 transition">
           <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1733363183/noticon/xldxhuzluop75rkmshmh.png" alt="Tistory" class="w-10 h-10 mb-1">
-          <span class="text-sm text-gray-700">티스토리</span>
+          <span class="text-sm text-gray-700">Tistory</span>
           </svg>
         </a>        
         
         <!-- Instagram -->
         <a href="https://www.instagram.com/song.2k" target="_blank" class="flex flex-col items-center hover:opacity-80 transition">
           <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567008788/noticon/bqjhb6xvljt9viccy6lh.png" alt="Instagram" class="w-10 h-10 mb-1">
-          <span class="text-sm text-gray-700">인스타그램</span>
+          <span class="text-sm text-gray-700">Instagram</span>
         </a>
 
         <!-- Email -->
         <a href="mailto:woorim31@naver.com" aria-label="Email" class="flex flex-col items-center hover:opacity-80 transition">
           <img src="https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567063035/noticon/hzdraiek2cwe52xhnvsg.svg" alt="Email" class="w-10 h-10 mb-1">
-          <span class="text-sm text-gray-700">이메일</span>
+          <span class="text-sm text-gray-700">Email</span>
         </a>
     
 

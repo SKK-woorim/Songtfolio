@@ -19,4 +19,27 @@ body {
   
   .modal.flex {
     display: flex; /* openModal() 함수로 열릴 때 */
-  }  
+  }
+
+  /* 가로 스크롤 영역 커스텀 - 얇고 미니멀한 스크롤바 */
+.project-scroll {
+  scrollbar-width: thin;            /* Firefox용 */
+  scrollbar-color: #9ca3af transparent; /* Firefox thumb + track */
+}
+
+.project-scroll::-webkit-scrollbar {
+  height: 4px; /* 아주 얇은 가로 스크롤바 */
+}
+
+.project-scroll::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;  /* Tailwind gray-400 정도 */
+  border-radius: 6px;
+}
+
+.project-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-scroll::-webkit-scrollbar-button {
+  display: none; /* 화살표 제거 */
+}
