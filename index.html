@@ -50,8 +50,7 @@
     </div>
   </header>
   
-  
-
+  <!-- 메인 -->
   <main class="pt-24 px-4 max-w-4xl mx-auto space-y-16">
 
     <!-- 홈 -->
@@ -133,21 +132,21 @@
           
           <!-- 썸네일 이미지 -->
           <div class="relative w-full h-[70%]">
-            <img src="image/project1_thumb.jpg" alt="Project 1" class="w-full h-full object-cover">
+            <img src="image/t2g_thumb.png" alt="Project 1" class="w-full h-full object-cover">
     
             <!-- 호버 시 나오는 설명 오버레이 -->
             <div class="absolute inset-0 bg-black bg-opacity-60 text-white opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center text-sm text-center px-2">
-              이 프로젝트는 웹 기반 G-code 생성기를 구현한 작품입니다.
+              프롬프트 기반 G-code 생성 <br>웹 플랫폼
             </div>
           </div>
     
           <!-- 제목 -->
           <div class="h-[30%] flex items-center justify-center border-t">
-            <h3 class="text-center text-base font-semibold">Project 1</h3>
+            <h3 class="text-center text-base font-semibold">Text to G-code<br>(T2G)</h3>
           </div>
         </div>
     
-        <!-- 카드 2 (예시) -->
+        <!-- 카드 2 -->
         <div onclick="openModal('project2')"
              class="min-w-[200px] h-[300px] bg-white rounded-lg shadow hover:shadow-xl cursor-pointer transition duration-300 flex flex-col overflow-hidden group relative">
           
@@ -297,13 +296,62 @@
   </main>
 
   <!-- 대외활동 모달 -->
-  <div id="activities1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
+   <div id="activities1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="modal-content bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 max-w-3xl relative overflow-y-auto max-h-[90vh]">
       <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('activities1')">&times;</span>
-      <h2 class="text-2xl font-bold mb-2">Project 1</h2>
-      <p>이곳에 대외활동동 1의 상세 정보를 적습니다.</p>
+      <h2 class="text-2xl font-bold text-blue-800 mb-4">HAI 소프트웨어 동아리 활동</h2>
+      <!-- 동기 및 창설 배경 -->
+       <p class="text-gray-700 text-sm mb-4">
+        소프트웨어 개발에 대한 열정을 바탕으로 실전 프로젝트 경험을 쌓고자 2024년 4월 교내 소프트웨어 프로젝트 동아리 <span class="font-semibold">HAI</span>를 창설하였습니다.
+        단순한 학습에 그치지 않고 다양한 팀 프로젝트를 통해 개발 역량을 강화하고, 학과 내 선후배 간 소통을 도모하기 위해 기획되었습니다.
+        동아리 비전 수립부터 운영까지 전반을 주도하였고, 팀 프로젝트에서는 주로 <span class="font-semibold">기획 및 팀 리더</span> 역할을 맡았습니다.
+      </p>
+      <!-- 창설 및 운영 -->
+       <div class="mb-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">1️⃣ 동아리 창설 및 운영</h3>
+        <p class="text-gray-700 text-sm">
+          소수 인원으로 시작한 개발 스터디에서 체계적인 프로젝트 경험의 필요성을 느껴, 교수님과 논의 후 정식 동아리 설립을 결정했습니다.
+          설립 취지와 비전을 설명하며 회원을 모집했고, <span class="font-semibold">15명의 학우</span>가 참여해 프로젝트/개발/디자인 파트로 역할을 분배하여 운영했습니다.
+        </p>
+      </div>
+
+   <!-- 프로젝트 및 공모전 -->
+   <div class="mb-6">
+    <h3 class="text-lg font-semibold text-gray-800 mb-2">2️⃣ 주요 프로젝트 및 공모전 참여</h3>
+
+    <!-- 프로젝트 1 -->
+    <div class="bg-gray-50 border border-gray-200 p-4 rounded mb-4">
+     <h4 class="font-bold text-gray-800 mb-1">📌 T2G – 텍스트 기반 3D 모델 생성 웹사이트</h4>
+     <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+      <li>사용자 입력 텍스트로 실시간 3D 모델 자동 생성 및 G-code 변환 기능 구현</li>
+      <li><span class="font-semibold">역할:</span> 팀장, 프론트엔드 개발, 프로젝트 기획 및 역할 분배</li>
+      <li><span class="font-semibold">성과:</span> 우수상 2회 수상 및 우수팀 선정</li>
+     </ul>
     </div>
+
+    <!-- 프로젝트 2 -->
+    <div class="bg-gray-50 border border-gray-200 p-4 rounded">
+     <h4 class="font-bold text-gray-800 mb-1">📌 지하수 수위 예측 AI 모델</h4>
+     <ul class="list-disc pl-5 text-sm text-gray-700 space-y-1">
+      <li>기상 데이터 기반 LSTM 모델로 홍천 지역 수위 예측 (테스트 RMSE: <span class="font-mono font-bold">0.054</span>)</li>
+      <li><span class="font-semibold">역할:</span> 팀장, 프로젝트 설계, 데이터 수집 및 전처리</li>
+      <li><span class="font-semibold">성과:</span> 대상, 우수상, 장려상 등 3개 대회 수상</li>
+     </ul>
+    </div>
+   </div>
+
+   <!-- 배운 점 -->
+   <div>
+    <h3 class="text-lg font-semibold text-gray-800 mb-2">3️⃣ 배운 점 및 성장</h3>
+    <p class="text-gray-700 text-sm">
+     동아리 운영을 통해 <span class="font-semibold">리더십, 협업, 기획력</span>을 키웠고, 문서 작성과 일정 관리의 중요성을 체득했습니다.
+     발표와 공모전 경험을 통해 <span class="font-semibold">프레젠테이션 및 피드백 문화</span>에 대한 이해도도 높일 수 있었습니다.
+    </p>
+   </div>
   </div>
+ </div>
+
+
 
   <div id="activities2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
     <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
@@ -314,10 +362,10 @@
   </div>
   
   <!-- 프로젝트 모달 -->
-  <div id="project1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
+   <div id="project1" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="modal-content bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 max-w-3xl relative overflow-y-auto max-h-[90vh]">
       <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('project1')">&times;</span>
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">Project 1 - T2G</h2>
+      <h2 class="text-2xl font-bold mb-2">T2G Project</h2>
       <div class="aspect-video mb-4">
         <iframe src="https://drive.google.com/file/d/1hfIR4i9PC8MZbJvnH9uulrBcWEDj15WB/preview" 
         allow="autoplay" 
@@ -335,15 +383,21 @@
   </div>
 
 
-  <div id="project2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 max-w-xl relative">
-      <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('project1')">&times;</span>
-      <h2 class="text-2xl font-bold text-blue-800 mb-4">Project 1 - T2G</h2>
-    
+   <div id="project2" class="modal fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="modal-content bg-white p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 max-w-3xl relative overflow-y-auto max-h-[90vh]">
+      <span class="absolute top-2 right-4 text-2xl cursor-pointer" onclick="closeModal('project2')">&times;</span>
+      <h2 class="text-2xl font-bold mb-2">T2G Project</h2>
+      <div class="aspect-video mb-4">
+        <iframe src="https://drive.google.com/file/d/1hfIR4i9PC8MZbJvnH9uulrBcWEDj15WB/preview" 
+        allow="autoplay" 
+        class="w-full h-full rounded shadow"
+        frameborder="0" allowfullscreen>
+      </iframe>
+    </div>
       <div class="space-y-3 text-gray-700 text-sm">
-        <p>🛠 <span class="font-semibold">사용 기술:</span> Flask, Three.js, JavaScript, HTML/CSS</p>
+        <p>🛠 <span class="font-semibold">사용 기술:</span> JavaScript, HTML/CSS, Python, Spring Framework, Meshy.ai API</p>
         <p>🔍 <span class="font-semibold">설명:</span> 텍스트 입력을 바탕으로 3D 모델을 생성하고, 이를 G-code로 변환하는 웹 플랫폼입니다.</p>
-        <p>👨‍💻 <span class="font-semibold">역할:</span> 전체 기획, API 연동, 프론트 구현</p>
+        <p>👨‍💻 <span class="font-semibold">역할:</span> 프로젝트 기획, API 연동, 프론트엔드 개발</p>
         <p>🏆 <span class="font-semibold">성과:</span> 창UP 아이디어 경진대회 대상</p>
       </div>
     </div>
